@@ -17,7 +17,7 @@
     "aws:cdk:path": "MerkleTreeStack/api/Resource"
    }
   },
-  "apiDeployment149F129432a1a6376bc465f3490163e46db0db93": {
+  "apiDeployment149F1294acdbed6f72365edb2cf38a981a370f41": {
    "Type": "AWS::ApiGateway::Deployment",
    "Properties": {
     "Description": "Automatically created by the RestApi construct",
@@ -37,7 +37,7 @@
    "Type": "AWS::ApiGateway::Stage",
    "Properties": {
     "DeploymentId": {
-     "Ref": "apiDeployment149F129432a1a6376bc465f3490163e46db0db93"
+     "Ref": "apiDeployment149F1294acdbed6f72365edb2cf38a981a370f41"
     },
     "RestApiId": {
      "Ref": "apiC8550315"
@@ -72,7 +72,7 @@
     "Action": "lambda:InvokeFunction",
     "FunctionName": {
      "Fn::GetAtt": [
-      "readMerkleTree976F8FC8",
+      "MerkleTreeStackreadMerkleTreeB1A0528E",
       "Arn"
      ]
     },
@@ -116,7 +116,7 @@
     "Action": "lambda:InvokeFunction",
     "FunctionName": {
      "Fn::GetAtt": [
-      "readMerkleTree976F8FC8",
+      "MerkleTreeStackreadMerkleTreeB1A0528E",
       "Arn"
      ]
     },
@@ -173,7 +173,7 @@
         ":lambda:path/2015-03-31/functions/",
         {
          "Fn::GetAtt": [
-          "readMerkleTree976F8FC8",
+          "MerkleTreeStackreadMerkleTreeB1A0528E",
           "Arn"
          ]
         },
@@ -193,7 +193,7 @@
     "aws:cdk:path": "MerkleTreeStack/api/Default/merkle-tree/GET/Resource"
    }
   },
-  "readMerkleTreeServiceRoleCC59E8B0": {
+  "MerkleTreeStackreadMerkleTreeServiceRoleD9171575": {
    "Type": "AWS::IAM::Role",
    "Properties": {
     "AssumeRolePolicyDocument": {
@@ -224,10 +224,10 @@
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "MerkleTreeStack/readMerkleTree/ServiceRole/Resource"
+    "aws:cdk:path": "MerkleTreeStack/MerkleTreeStack-readMerkleTree/ServiceRole/Resource"
    }
   },
-  "readMerkleTreeServiceRoleDefaultPolicyB154C26E": {
+  "MerkleTreeStackreadMerkleTreeServiceRoleDefaultPolicyD5B66282": {
    "Type": "AWS::IAM::Policy",
    "Properties": {
     "PolicyDocument": {
@@ -265,25 +265,25 @@
      ],
      "Version": "2012-10-17"
     },
-    "PolicyName": "readMerkleTreeServiceRoleDefaultPolicyB154C26E",
+    "PolicyName": "MerkleTreeStackreadMerkleTreeServiceRoleDefaultPolicyD5B66282",
     "Roles": [
      {
-      "Ref": "readMerkleTreeServiceRoleCC59E8B0"
+      "Ref": "MerkleTreeStackreadMerkleTreeServiceRoleD9171575"
      }
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "MerkleTreeStack/readMerkleTree/ServiceRole/DefaultPolicy/Resource"
+    "aws:cdk:path": "MerkleTreeStack/MerkleTreeStack-readMerkleTree/ServiceRole/DefaultPolicy/Resource"
    }
   },
-  "readMerkleTree976F8FC8": {
+  "MerkleTreeStackreadMerkleTreeB1A0528E": {
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Code": {
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "a8e1cf713928c44d55fa134e5e601d69a12f4258fd23dcb985b0b0618290fb4f.zip"
+     "S3Key": "36f629ac3ec7d63f5b285cb9776ecc5d1b4d315af725f282b3071f7096e9f961.zip"
     },
     "Environment": {
      "Variables": {
@@ -298,24 +298,24 @@
     "MemorySize": 10240,
     "Role": {
      "Fn::GetAtt": [
-      "readMerkleTreeServiceRoleCC59E8B0",
+      "MerkleTreeStackreadMerkleTreeServiceRoleD9171575",
       "Arn"
      ]
     },
     "Runtime": "nodejs18.x"
    },
    "DependsOn": [
-    "readMerkleTreeServiceRoleDefaultPolicyB154C26E",
-    "readMerkleTreeServiceRoleCC59E8B0"
+    "MerkleTreeStackreadMerkleTreeServiceRoleDefaultPolicyD5B66282",
+    "MerkleTreeStackreadMerkleTreeServiceRoleD9171575"
    ],
    "Metadata": {
-    "aws:cdk:path": "MerkleTreeStack/readMerkleTree/Resource",
-    "aws:asset:path": "asset.a8e1cf713928c44d55fa134e5e601d69a12f4258fd23dcb985b0b0618290fb4f",
+    "aws:cdk:path": "MerkleTreeStack/MerkleTreeStack-readMerkleTree/Resource",
+    "aws:asset:path": "asset.36f629ac3ec7d63f5b285cb9776ecc5d1b4d315af725f282b3071f7096e9f961",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
   },
-  "writeMerkleTreeServiceRole619A72BF": {
+  "MerkleTreeStackwriteMerkleTreeServiceRoleF2AF95E6": {
    "Type": "AWS::IAM::Role",
    "Properties": {
     "AssumeRolePolicyDocument": {
@@ -346,10 +346,10 @@
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "MerkleTreeStack/writeMerkleTree/ServiceRole/Resource"
+    "aws:cdk:path": "MerkleTreeStack/MerkleTreeStack-writeMerkleTree/ServiceRole/Resource"
    }
   },
-  "writeMerkleTreeServiceRoleDefaultPolicyF328E957": {
+  "MerkleTreeStackwriteMerkleTreeServiceRoleDefaultPolicy7A5F355E": {
    "Type": "AWS::IAM::Policy",
    "Properties": {
     "PolicyDocument": {
@@ -391,25 +391,25 @@
      ],
      "Version": "2012-10-17"
     },
-    "PolicyName": "writeMerkleTreeServiceRoleDefaultPolicyF328E957",
+    "PolicyName": "MerkleTreeStackwriteMerkleTreeServiceRoleDefaultPolicy7A5F355E",
     "Roles": [
      {
-      "Ref": "writeMerkleTreeServiceRole619A72BF"
+      "Ref": "MerkleTreeStackwriteMerkleTreeServiceRoleF2AF95E6"
      }
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "MerkleTreeStack/writeMerkleTree/ServiceRole/DefaultPolicy/Resource"
+    "aws:cdk:path": "MerkleTreeStack/MerkleTreeStack-writeMerkleTree/ServiceRole/DefaultPolicy/Resource"
    }
   },
-  "writeMerkleTree4293DF1F": {
+  "MerkleTreeStackwriteMerkleTreeDE4EA455": {
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Code": {
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "63784c94dccdfc6239b09c6ab957b152347e7f6821f697dc94332218ab792712.zip"
+     "S3Key": "c5ec24e0bbc05d295705ad5c475561ff1a80dd215ac91fb1c8e30f062aeeac92.zip"
     },
     "Environment": {
      "Variables": {
@@ -423,19 +423,19 @@
     "Handler": "index.handler",
     "Role": {
      "Fn::GetAtt": [
-      "writeMerkleTreeServiceRole619A72BF",
+      "MerkleTreeStackwriteMerkleTreeServiceRoleF2AF95E6",
       "Arn"
      ]
     },
     "Runtime": "nodejs18.x"
    },
    "DependsOn": [
-    "writeMerkleTreeServiceRoleDefaultPolicyF328E957",
-    "writeMerkleTreeServiceRole619A72BF"
+    "MerkleTreeStackwriteMerkleTreeServiceRoleDefaultPolicy7A5F355E",
+    "MerkleTreeStackwriteMerkleTreeServiceRoleF2AF95E6"
    ],
    "Metadata": {
-    "aws:cdk:path": "MerkleTreeStack/writeMerkleTree/Resource",
-    "aws:asset:path": "asset.63784c94dccdfc6239b09c6ab957b152347e7f6821f697dc94332218ab792712",
+    "aws:cdk:path": "MerkleTreeStack/MerkleTreeStack-writeMerkleTree/Resource",
+    "aws:asset:path": "asset.c5ec24e0bbc05d295705ad5c475561ff1a80dd215ac91fb1c8e30f062aeeac92",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }

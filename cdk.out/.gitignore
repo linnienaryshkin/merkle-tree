@@ -1,3 +1,5 @@
 *
 !.gitignore
+
+# I just like to compare CF template via git diff
 !MerkleTreeStack.template.json

@@ -29,9 +29,9 @@ export class MerkleTreeStack extends cdk.Stack {
     };
 
     {
-      const readMerkleTree = new nodejs.NodejsFunction(this, 'readMerkleTree', {
+      const readMerkleTree = new nodejs.NodejsFunction(this, `${this.stackName}-readMerkleTree`, {
         functionName: `${this.stackName}-readMerkleTree`, // I like just by looking onto lambda name understand which stack it belongs to
-        entry: 'src/readMerkleTree.ts',
+        entry: 'src/functions/readMerkleTree.ts',
         runtime: this.runtime,
         environment,
         memorySize: 10240, // Just to stress out - current exercise allows read whole storage into memory - hence we use maximum allowed
@@ -42,9 +42,9 @@ export class MerkleTreeStack extends cdk.Stack {
     }
 
     {
-      const writeMerkleTree = new nodejs.NodejsFunction(this, 'writeMerkleTree', {
+      const writeMerkleTree = new nodejs.NodejsFunction(this, `${this.stackName}-writeMerkleTree`, {
         functionName: `${this.stackName}-writeMerkleTree`,
-        entry: 'src/writeMerkleTree.ts',
+        entry: 'src/functions/writeMerkleTree.ts',
         runtime: this.runtime,
         environment,
       });

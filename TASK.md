@@ -10,6 +10,8 @@ The goal is to build a simple app to store a binary Merkle tree and an API to re
 
 > 💡 Merkle Trees are a very useful data storage tool which makes data verification and integrity checking efficient. They are widely used in the blockchain space. A binary Merkle tree is a specific case of a Merkle tree in which nodes have to 2 children.
 
+![Scheme](https://river.com/learn/images/articles/merkle-tree.png)
+
 # Initial context
 
 ## Binary Trees
