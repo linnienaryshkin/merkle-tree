@@ -1,2 +1,9 @@
-# merkle-tree
-The goal is to build a simple app to store a binary Merkle tree and an API to retrieve certain information about the tree. The app should be deployed to AWS using infrastructure-as-code (IaC)
+# Merkle tree
+
+This is an exercise done for an interview process. Read more about it in [TASK.md](./TASK.md)
+
+> 💡 Merkle Trees are a very useful data storage tool which makes data verification and integrity checking efficient. They are widely used in the blockchain space. A binary Merkle tree is a specific case of a Merkle tree in which nodes have to 2 children.
+
+# Usage
+
+TBD
