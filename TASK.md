@@ -92,11 +92,11 @@ AWS’s CDK is a framework to define cloud infrastructure as code (IaC). You wil
    2. Your code should initialize the data store. Example:
 
       ```ts
-      import * as cdk from "aws-cdk-lib";
+      import * as cdk from 'aws-cdk-lib';
 
       const bucket = new cdk.aws();
 
-      s3.Bucket(this, "MyBucket", { bucketName: "my-bucket", versioned: true });
+      s3.Bucket(this, 'MyBucket', { bucketName: 'my-bucket', versioned: true });
       ```
 
    3. Loading the entire tree to memory to perform later operations is acceptable for this challenge.
