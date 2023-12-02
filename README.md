@@ -6,11 +6,17 @@ This is an exercise done for an interview process. Read more about it in [TASK.m
 
 ## Deployment
 
-1. [Authorization](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html#getting_started_auth) - follow guide, you need an active AWS access portal session for the AWS CDK.
+1. [Authorization](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html#getting_started_auth) - follow the guide, you need an active AWS access portal session for the AWS CDK.
 2. [Bootstrapping](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html#getting_started_bootstrap) - Deploying stacks with the AWS CDK requires dedicated Amazon S3 buckets and other containers to be available to AWS CloudFormation during deployment.
 
 After, you should be available to deploy.
 
-- `npx cdk deploy` deploy this stack to your default AWS account/region
-- `npx cdk diff` compare deployed stack with the current state
-- `npx cdk synth` emits the synthesized CloudFormation template
+- `cdk synth` emits the synthesized CloudFormation template
+- `cdk deploy` deploy this stack to your default AWS account/region
+- `cdk diff` compare deployed stack with the current state
+
+## Warn
+
+In the core of project, you'll find `cdk.context.json` - highly recommended to fill it before going production :)
+
+Read more here: https://docs.aws.amazon.com/cdk/v2/guide/context.html
