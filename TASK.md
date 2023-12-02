@@ -1,4 +1,6 @@
-# App backend | Take-home exercise
+# 💻 App backend | Take-home exercise
+
+> October 2023
 
 The goal of this challenge is to assess your applied coding skills as well as your ability to research and apply new concepts. You should expect to spend 3-6 hours on this. This exercise will help you get a better understanding of engineering at TFH. It will particularly test architecture and infrastructure knowledge.
 
