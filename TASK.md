@@ -10,7 +10,7 @@ The goal is to build a simple app to store a binary Merkle tree and an API to re
 
 ![Merkel Tree example](https://river.com/learn/images/articles/merkle-tree.png)
 
-More info about Merle Trees:
+More about Merle Trees:
 
 - [IOTA tutorial 18: Merkle Tree](https://www.youtube.com/watch?v=s0fruNfgW30)
 

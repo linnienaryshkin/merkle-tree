@@ -1,13 +1,8 @@
 import { createHash } from 'crypto';
 
-const hash = createHash('sha256');
-console.log(hash.digest('hex'));
-
 export type MerkleTreeNode = {
   parent?: MerkleTreeNode;
-  left?: MerkleTreeNode;
-  right?: MerkleTreeNode;
-
+  offset: number;
   value: string; // Basically, hash here
 };
 
@@ -35,97 +30,69 @@ export interface MerkleTree {
 
 // Leaf nodes
 const node7: MerkleTreeNode = {
-  parent: undefined,
-  left: undefined,
-  right: undefined,
+  offset: 7,
   value: createHash('sha256').update('7').digest('hex'),
 };
 const node8: MerkleTreeNode = {
-  parent: undefined,
-  left: undefined,
-  right: undefined,
+  offset: 6,
   value: createHash('sha256').update('8').digest('hex'),
 };
 const node9: MerkleTreeNode = {
-  parent: undefined,
-  left: undefined,
-  right: undefined,
+  offset: 5,
   value: createHash('sha256').update('9').digest('hex'),
 };
 const node10: MerkleTreeNode = {
-  parent: undefined,
-  left: undefined,
-  right: undefined,
+  offset: 4,
   value: createHash('sha256').update('10').digest('hex'),
 };
 const node11: MerkleTreeNode = {
-  parent: undefined,
-  left: undefined,
-  right: undefined,
+  offset: 3,
   value: createHash('sha256').update('11').digest('hex'),
 };
 const node12: MerkleTreeNode = {
-  parent: undefined,
-  left: undefined,
-  right: undefined,
+  offset: 2,
   value: createHash('sha256').update('12').digest('hex'),
 };
 const node13: MerkleTreeNode = {
-  parent: undefined,
-  left: undefined,
-  right: undefined,
+  offset: 1,
   value: createHash('sha256').update('13').digest('hex'),
 };
 const node14: MerkleTreeNode = {
-  parent: undefined,
-  left: undefined,
-  right: undefined,
+  offset: 0,
   value: createHash('sha256').update('14').digest('hex'),
 };
 
 // Intermediate nodes
 const node6: MerkleTreeNode = {
-  parent: undefined,
-  left: node13,
-  right: node14,
+  offset: 3,
   value: createHash('sha256').update(node13.value).update(node14.value).digest('hex'),
 };
 const node5: MerkleTreeNode = {
-  parent: undefined,
-  left: node11,
-  right: node12,
+  offset: 2,
   value: createHash('sha256').update(node11.value).update(node12.value).digest('hex'),
 };
 const node4: MerkleTreeNode = {
-  parent: undefined,
-  left: node9,
-  right: node10,
+  offset: 1,
   value: createHash('sha256').update(node9.value).update(node10.value).digest('hex'),
 };
 const node3: MerkleTreeNode = {
-  parent: undefined,
-  left: node7,
-  right: node8,
+  offset: 0,
   value: createHash('sha256').update(node7.value).update(node8.value).digest('hex'),
 };
+
 const node2: MerkleTreeNode = {
-  parent: undefined,
-  left: node5,
-  right: node6,
+  offset: 1,
   value: createHash('sha256').update(node5.value).update(node6.value).digest('hex'),
 };
 const node1: MerkleTreeNode = {
-  parent: undefined,
-  left: node3,
-  right: node4,
+  offset: 0,
   value: createHash('sha256').update(node3.value).update(node4.value).digest('hex'),
 };
 
 // Root node
 const node0: MerkleTreeNode = {
   parent: undefined,
-  left: node1,
-  right: node2,
+  offset: 0,
   value: createHash('sha256').update(node1.value).update(node2.value).digest('hex'),
 };
 

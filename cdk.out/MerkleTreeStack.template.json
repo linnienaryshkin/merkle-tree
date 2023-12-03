@@ -17,7 +17,7 @@
     "aws:cdk:path": "MerkleTreeStack/api/Resource"
    }
   },
-  "apiDeployment149F1294acdbed6f72365edb2cf38a981a370f41": {
+  "apiDeployment149F12948458a76d0b7e7541a3adc7fbadd92cf8": {
    "Type": "AWS::ApiGateway::Deployment",
    "Properties": {
     "Description": "Automatically created by the RestApi construct",
@@ -26,7 +26,8 @@
     }
    },
    "DependsOn": [
-    "apimerkletreeGET5C668B00",
+    "apimerkletreenodeIndexGETEA615B4C",
+    "apimerkletreenodeIndexE1B7A164",
     "apimerkletree59F350AB"
    ],
    "Metadata": {
@@ -37,7 +38,7 @@
    "Type": "AWS::ApiGateway::Stage",
    "Properties": {
     "DeploymentId": {
-     "Ref": "apiDeployment149F1294acdbed6f72365edb2cf38a981a370f41"
+     "Ref": "apiDeployment149F12948458a76d0b7e7541a3adc7fbadd92cf8"
     },
     "RestApiId": {
      "Ref": "apiC8550315"
@@ -66,7 +67,22 @@
     "aws:cdk:path": "MerkleTreeStack/api/Default/merkle-tree/Resource"
    }
   },
-  "apimerkletreeGETApiPermissionMerkleTreeStackapi1243F9A7GETmerkletree4D14FF03": {
+  "apimerkletreenodeIndexE1B7A164": {
+   "Type": "AWS::ApiGateway::Resource",
+   "Properties": {
+    "ParentId": {
+     "Ref": "apimerkletree59F350AB"
+    },
+    "PathPart": "{nodeIndex}",
+    "RestApiId": {
+     "Ref": "apiC8550315"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "MerkleTreeStack/api/Default/merkle-tree/{nodeIndex}/Resource"
+   }
+  },
+  "apimerkletreenodeIndexGETApiPermissionMerkleTreeStackapi1243F9A7GETmerkletreenodeIndex8B315121": {
    "Type": "AWS::Lambda::Permission",
    "Properties": {
     "Action": "lambda:InvokeFunction",
@@ -101,16 +117,16 @@
        {
         "Ref": "apiDeploymentStageprod896C8101"
        },
-       "/GET/merkle-tree"
+       "/GET/merkle-tree/*"
       ]
      ]
     }
    },
    "Metadata": {
-    "aws:cdk:path": "MerkleTreeStack/api/Default/merkle-tree/GET/ApiPermission.MerkleTreeStackapi1243F9A7.GET..merkle-tree"
+    "aws:cdk:path": "MerkleTreeStack/api/Default/merkle-tree/{nodeIndex}/GET/ApiPermission.MerkleTreeStackapi1243F9A7.GET..merkle-tree.{nodeIndex}"
    }
   },
-  "apimerkletreeGETApiPermissionTestMerkleTreeStackapi1243F9A7GETmerkletree10AC7782": {
+  "apimerkletreenodeIndexGETApiPermissionTestMerkleTreeStackapi1243F9A7GETmerkletreenodeIndexFAF22B31": {
    "Type": "AWS::Lambda::Permission",
    "Properties": {
     "Action": "lambda:InvokeFunction",
@@ -141,16 +157,16 @@
        {
         "Ref": "apiC8550315"
        },
-       "/test-invoke-stage/GET/merkle-tree"
+       "/test-invoke-stage/GET/merkle-tree/*"
       ]
      ]
     }
    },
    "Metadata": {
-    "aws:cdk:path": "MerkleTreeStack/api/Default/merkle-tree/GET/ApiPermission.Test.MerkleTreeStackapi1243F9A7.GET..merkle-tree"
+    "aws:cdk:path": "MerkleTreeStack/api/Default/merkle-tree/{nodeIndex}/GET/ApiPermission.Test.MerkleTreeStackapi1243F9A7.GET..merkle-tree.{nodeIndex}"
    }
   },
-  "apimerkletreeGET5C668B00": {
+  "apimerkletreenodeIndexGETEA615B4C": {
    "Type": "AWS::ApiGateway::Method",
    "Properties": {
     "AuthorizationType": "NONE",
@@ -183,14 +199,14 @@
      }
     },
     "ResourceId": {
-     "Ref": "apimerkletree59F350AB"
+     "Ref": "apimerkletreenodeIndexE1B7A164"
     },
     "RestApiId": {
      "Ref": "apiC8550315"
     }
    },
    "Metadata": {
-    "aws:cdk:path": "MerkleTreeStack/api/Default/merkle-tree/GET/Resource"
+    "aws:cdk:path": "MerkleTreeStack/api/Default/merkle-tree/{nodeIndex}/GET/Resource"
    }
   },
   "MerkleTreeStackreadMerkleTreeServiceRoleD9171575": {
@@ -283,7 +299,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "36f629ac3ec7d63f5b285cb9776ecc5d1b4d315af725f282b3071f7096e9f961.zip"
+     "S3Key": "2f5ef9bb7ee111a95a498d493a8ab65e8d11787a25166289b774bea600a0dfa1.zip"
     },
     "Environment": {
      "Variables": {
@@ -310,7 +326,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "MerkleTreeStack/MerkleTreeStack-readMerkleTree/Resource",
-    "aws:asset:path": "asset.36f629ac3ec7d63f5b285cb9776ecc5d1b4d315af725f282b3071f7096e9f961",
+    "aws:asset:path": "asset.2f5ef9bb7ee111a95a498d493a8ab65e8d11787a25166289b774bea600a0dfa1",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -409,7 +425,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "c5ec24e0bbc05d295705ad5c475561ff1a80dd215ac91fb1c8e30f062aeeac92.zip"
+     "S3Key": "f49c32b985defe3894685263c05414058ed976e50c96cb8537f6baf8f209d61f.zip"
     },
     "Environment": {
      "Variables": {
@@ -435,7 +451,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "MerkleTreeStack/MerkleTreeStack-writeMerkleTree/Resource",
-    "aws:asset:path": "asset.c5ec24e0bbc05d295705ad5c475561ff1a80dd215ac91fb1c8e30f062aeeac92",
+    "aws:asset:path": "asset.f49c32b985defe3894685263c05414058ed976e50c96cb8537f6baf8f209d61f",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }

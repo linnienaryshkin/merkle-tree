@@ -3,8 +3,9 @@ import { Template } from 'aws-cdk-lib/assertions';
 import { MerkleTreeStack } from './MerkleTreeStack';
 
 const context = {
-  // Disable bundling NodeJS functions, to speed up testing
+  // Disable bundling functions, to speed up testing
   'aws:cdk:bundling-stacks': [],
+  // But if you want check bundle size - use `cdk synth` command
 };
 
 test('should check general overview of the stack', () => {

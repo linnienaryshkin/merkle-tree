@@ -14,14 +14,25 @@ describe('readMerkleTree', () => {
       },
     } as unknown as GetObjectCommandOutput;
     jest.spyOn(s3Client, 'send').mockResolvedValueOnce(output as never);
-    const result = await handler({} as APIGatewayProxyEventV2, {} as Context, () => {});
+    const result = await handler(
+      { pathParameters: { nodeIndex: '10' } } as unknown as APIGatewayProxyEventV2,
+      {} as Context,
+      () => {}
+    );
 
-    expect(result).toEqual({ statusCode: 200, body: '{"root":"root","leaves":["leaves"]}' });
+    expect(result).toEqual({
+      statusCode: 200,
+      body: '{"value":"4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5","depth":3,"offset":4}',
+    });
   });
 
   it('should return 500 when error', async () => {
     jest.spyOn(s3Client, 'send').mockRejectedValueOnce(new Error('unexpected issue') as never);
-    const result = await handler({} as APIGatewayProxyEventV2, {} as Context, () => {});
+    const result = await handler(
+      { pathParameters: { nodeIndex: '10' } } as unknown as APIGatewayProxyEventV2,
+      {} as Context,
+      () => {}
+    );
 
     expect(result).toEqual({ statusCode: 500, body: 'Error: unexpected issue' });
   });
@@ -34,7 +45,7 @@ describe('readMerkleTree', () => {
     } as unknown as GetObjectCommandOutput;
     jest.spyOn(s3Client, 'send').mockResolvedValueOnce(output as never);
     const result = await handler(
-      { pathParameters: { index: '100' } } as unknown as APIGatewayProxyEventV2,
+      { pathParameters: { nodeIndex: '100' } } as unknown as APIGatewayProxyEventV2,
       {} as Context,
       () => {}
     );
