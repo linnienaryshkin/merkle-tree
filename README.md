@@ -17,6 +17,15 @@ After, you should be available to deploy.
 - `cdk deploy` deploy this stack to your default AWS account/region
 - `cdk diff` compare deployed stack with the current state
 
+## Usage
+
+Current CDK expose two lambdas.
+
+1. `writeMerkleTree` - paramsless function, launch once to store static Merkle Tree in S3 bucket
+2. `readMerkleTree` - accepts Merkle Tree Node index, the return value of that node, depth and offset (read [TASK.md](./TASK.md) to understand more)
+
+   Additionally, `readMerkleTree` is connected to AWS API Gateway, and by `curl https://{BASE_URL}/merkle-tree/{nodeIndex}` you'll get the same output
+
 ## Be Aware
 
 In the core of the project, you'll find `cdk.context.json` - highly recommended to fill it in case of production usage :)
