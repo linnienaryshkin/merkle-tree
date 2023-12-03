@@ -4,6 +4,8 @@ This is an exercise done for an interview process. Read more about it in [TASK.m
 
 > 💡 Merkle Trees are a very useful data storage tool which makes data verification and integrity checking efficient. They are widely used in the blockchain space. A binary Merkle tree is a specific case of a Merkle tree in which nodes have to 2 children.
 
+![Merkel Tree example](https://river.com/learn/images/articles/merkle-tree.png)
+
 ## Deployment
 
 1. [Authorization](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html#getting_started_auth) - follow the guide, you need an active AWS access portal session for the AWS CDK.

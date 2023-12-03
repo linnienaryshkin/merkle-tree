@@ -25,4 +25,20 @@ describe('readMerkleTree', () => {
 
     expect(result).toEqual({ statusCode: 500, body: 'Error: unexpected issue' });
   });
+
+  it('should return 404 when no node found', async () => {
+    const output = {
+      Body: {
+        transformToString: jest.fn().mockResolvedValueOnce(JSON.stringify(MerkleTreePreset)),
+      },
+    } as unknown as GetObjectCommandOutput;
+    jest.spyOn(s3Client, 'send').mockResolvedValueOnce(output as never);
+    const result = await handler(
+      { pathParameters: { index: '100' } } as unknown as APIGatewayProxyEventV2,
+      {} as Context,
+      () => {}
+    );
+
+    expect(result).toEqual({ statusCode: 404, body: 'Not Found' });
+  });
 });

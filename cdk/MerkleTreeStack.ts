@@ -38,7 +38,7 @@ export class MerkleTreeStack extends cdk.Stack {
       });
 
       MerkleTreeBucket.grantRead(readMerkleTree);
-      api.root.addResource('merkle-tree').addMethod('GET', new apigateway.LambdaIntegration(readMerkleTree));
+      api.root.addResource('merkle-tree/{index}').addMethod('GET', new apigateway.LambdaIntegration(readMerkleTree));
     }
 
     {

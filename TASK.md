@@ -1,7 +1,5 @@
 # 💻 App backend | Take-home exercise
 
-> October 2023
-
 The goal of this challenge is to assess your applied coding skills as well as your ability to research and apply new concepts. You should expect to spend 3-6 hours on this. This exercise will help you get a better understanding of engineering at TFH. It will particularly test architecture and infrastructure knowledge.
 
 # The exercise
@@ -10,7 +8,11 @@ The goal is to build a simple app to store a binary Merkle tree and an API to re
 
 > 💡 Merkle Trees are a very useful data storage tool which makes data verification and integrity checking efficient. They are widely used in the blockchain space. A binary Merkle tree is a specific case of a Merkle tree in which nodes have to 2 children.
 
-![Scheme](https://river.com/learn/images/articles/merkle-tree.png)
+![Merkel Tree example](https://river.com/learn/images/articles/merkle-tree.png)
+
+More info about Merle Trees:
+
+- [IOTA tutorial 18: Merkle Tree](https://www.youtube.com/watch?v=s0fruNfgW30)
 
 # Initial context
 
